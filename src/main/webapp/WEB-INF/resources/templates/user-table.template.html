@@ -1,0 +1,36 @@
+<div class="col-md-4">
+    <div ng-if="$ctrl.users.length == 0">No Users</div>
+    <table ng-if="$ctrl.users.length != 0" class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in $ctrl.users">
+            <td>{{user.id}}</td>
+            <td ng-if="$ctrl.editMode == false">{{user.email}}</td>
+            <td ng-if="$ctrl.editMode == true"><input type="text" ng-model="user.email"/></td>
+
+            <td ng-if="$ctrl.editMode == false">{{user.firstname}}</td>
+            <td ng-if="$ctrl.editMode == true"><input type="text" ng-model="user.firstname"/></td>
+
+            <td ng-if="$ctrl.editMode == false">{{user.lastname}}</td>
+            <td ng-if="$ctrl.editMode == true"><input type="text" ng-model="user.lastname"/></td>
+
+            <td>
+                <button ng-if="$ctrl.editMode == false" type="button" class="btn btn-warning" ng-click="$ctrl.editUser()">Edit</button>
+                <button ng-if="$ctrl.editMode == true" type="button" class="btn btn-warning" ng-click="$ctrl.saveUser(user)">Save</button>
+            </td>
+            <td>
+                <button id="deleteButton{{user.id}}" type="button" class="btn btn-danger" ng-click="$ctrl.deleteUser(user.id)">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

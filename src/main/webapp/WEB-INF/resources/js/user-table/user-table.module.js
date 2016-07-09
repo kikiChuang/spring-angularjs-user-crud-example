@@ -1,0 +1,1 @@
+angular.module('userTable', ['core.user']);
