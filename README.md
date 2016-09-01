@@ -22,7 +22,7 @@ Open the src/main/resources/application.properties file and set your own configu
 1 . Clone project on your machine
 ```
 #!terminal 
-git clone https://bitbucket.org/MihaesAndrei/user-crud-example
+git clone https://gitlab.com/mihaesandrei/user-crud-example.git
 ```
 2 . Change directory
 ```
